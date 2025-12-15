@@ -486,7 +486,7 @@
     <h3 class="title is-4">Principle 2: Test Distributional Robustness</h3>
     <div class="content has-text-justified">
       <p>
-        <strong>Finding: Performance Inversion.</strong> Fine-tuning on a narrow distribution ($M_{core}$) leads to brittleness. As semantic distance increases ($d_1 \to d_5$), the specialist's advantage vanishes and eventually turns into a penalty compared to the baseline.
+        <strong>Finding: Performance Inversion.</strong> Fine-tuning on a narrow distribution (<i>M</i><sub>core</sub>) leads to brittleness. As semantic distance increases (<i>d</i><sub>1</sub> &rarr; <i>d</i><sub>5</sub>), the specialist's advantage vanishes and eventually turns into a penalty compared to the baseline.
         Benchmarks must include out-of-distribution (OOD) stress tests to penalize this brittleness.
       </p>
     </div>
@@ -495,7 +495,7 @@
       <div class="column is-full-width">
         <img src="static/images/tab_distribution.png" alt="Distribution Test Results" style="width: 100%; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
         <h2 class="subtitle has-text-centered" style="font-size: 0.9rem; margin-top: 10px;">
-          <strong>Table 3: Performance Inversion.</strong> The specialist model ($M_{core}$) excels locally but fails on OOD data ($d_5$), performing worse than the baseline.
+          <strong>Table 3: Performance Inversion.</strong> The specialist model (<i>M</i><sub>core</sub>) excels locally but fails on OOD data (<i>d</i><sub>5</sub>), performing worse than the baseline.
         </h2>
       </div>
     </div>
@@ -514,7 +514,7 @@
           </p>
           <p>
             <strong>Finding:</strong> 
-            Models consistently default to reciting memorized priors rather than reasoning from the new premises. Performance collapses on the Counterfactual Set ($\mathcal{D}_{cf}$) compared to the Balanced Set ($\mathcal{D}_{bal}$), as shown in the table.
+            Models consistently default to reciting memorized priors rather than reasoning from the new premises. Performance collapses on the Counterfactual Set (<i>D</i><sub>cf</sub>) compared to the Balanced Set (<i>D</i><sub>bal</sub>), as shown in the table.
             Benchmarks require problems that create a direct conflict between priors and on-the-fly deduction.
           </p>
         </div>
