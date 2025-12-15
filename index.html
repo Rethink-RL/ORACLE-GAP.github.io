@@ -442,60 +442,149 @@
 <!-- End image carousel -->
 
 
+<section class="section">
+  <div class="container is-max-desktop">
+    
+    <h2 class="title is-3 has-text-centered">Benchmark Design Principles</h2>
+    <div class="content has-text-centered">
+      <p>
+        Building on our analysis, we identify three key principles for effective RL generalization evaluation: 
+        <strong>testing cross-difficulty generalization</strong>, <strong>assessing distributional robustness</strong>, and <strong>probing counterfactual reasoning</strong>.
+      </p>
+    </div>
+
+    <hr>
+
+    <h3 class="title is-4">Principle 1: Stratify by Difficulty</h3>
+    <div class="content has-text-justified">
+      <p>
+        <strong>The Paradox of Average Scores.</strong> A difficulty-agnostic evaluation masks substantial differences in generalization. Our analysis shows that models trained on easy data fail on hard tasks, yet their aggregated average scores remain deceptively similar to strong generalists. 
+        <strong>Therefore, benchmarks must report performance across difficulty levels separately.</strong>
+      </p>
+    </div>
+
+    <div class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="difficulty-carousel" class="carousel results-carousel">
+            
+            <div class="item">
+              <img src="static/images/fig_illusion.png" alt="Illusion of Average Performance" style="width:100%; object-fit: contain;"/>
+              <h2 class="subtitle has-text-centered">
+                <strong>The Illusion of Average.</strong> (a) Stratified evaluation reveals widening gaps. (b) Average scores mask these failures.
+              </h2>
+            </div>
+
+            <div class="item">
+              <img src="static/images/fig_trend.png" alt="Cross Difficulty Trend" style="width:100%; object-fit: contain;"/>
+              <h2 class="subtitle has-text-centered">
+                <strong>Training on Difficulty.</strong> Training on harder problems (L4-L5) boosts transferability.
+              </h2>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <h3 class="title is-4">Principle 2: Test Distributional Robustness</h3>
+    <div class="content has-text-justified">
+      <p>
+        <strong>Finding: Performance Inversion.</strong> Fine-tuning on a narrow distribution ($M_{core}$) leads to brittleness. As semantic distance increases ($d_1 \to d_5$), the specialist's advantage vanishes and eventually turns into a penalty compared to the baseline.
+        <strong>Benchmarks must include out-of-distribution (OOD) stress tests to penalize this brittleness.</strong>
+      </p>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <img src="static/images/tab_distribution.png" alt="Distribution Test Results" style="width: 100%; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <h2 class="subtitle has-text-centered" style="font-size: 0.9rem; margin-top: 10px;">
+          <strong>Table 3: Performance Inversion.</strong> The specialist model ($M_{core}$) excels locally but fails on OOD data ($d_5$), performing worse than the baseline.
+        </h2>
+      </div>
+    </div>
+    
+    <br>
+
+    <h3 class="title is-4">Principle 3: Probe Counterfactual Reasoning</h3>
+    
+    <div class="columns is-vcentered">
+      
+      <div class="column is-7">
+        <div class="content has-text-justified">
+          <p>
+            <strong>Reasoning vs. Recitation.</strong> 
+            We distinguish true deduction from memorization by modifying problems to include counterfactual rules (e.g., changing the order of operations).
+          </p>
+          <p>
+            <strong>Finding:</strong> 
+            Models consistently default to reciting memorized priors rather than reasoning from the new premises. Performance collapses on the Counterfactual Set ($\mathcal{D}_{cf}$) compared to the Balanced Set ($\mathcal{D}_{bal}$), as shown in the table.
+            <strong>Benchmarks require problems that create a direct conflict between priors and on-the-fly deduction.</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-5 has-text-centered">
+        <img src="static/images/tab_counterfactual.png" alt="Counterfactual Results" style="width: 80%; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+        <p class="is-size-7" style="margin-top: 5px;">
+          <strong>Table 4: Performance Collapse.</strong>
+        </p>
+      </div>
+      
+    </div>
+
+  </div>
+</section>
+
+
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
           <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
 
 
 <!-- Video carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
           <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
             <source src="static/videos/carousel1.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
+        <div class="item item-video2">  
           <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
             <source src="static/videos/carousel2.mp4" type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
           <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
             <source src="static/videos/carousel3.mp4" type="video/mp4">
           </video>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
@@ -504,18 +593,16 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
       <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
           </iframe>
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
