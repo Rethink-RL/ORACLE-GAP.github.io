@@ -391,42 +391,53 @@
 
 
 <!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+<section class="section">
+  <div class="container is-max-desktop">
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Analysis Framework & Key Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            <strong>The Oracle Performance Gap (OPG).</strong> 
+            To audit the validity of current benchmarks, we introduce the OPG metric. Unlike standard generalization gaps, OPG measures the <em>discriminative power</em> of a test set by comparing a model trained on the training data against an <strong>"Oracle" model</strong> (fine-tuned explicitly on the test set).
+          </p>
+          <p>
+            <strong>Experiment Setup.</strong>
+            We evaluated <strong>Qwen2.5 (3B & 7B)</strong> across four benchmarks: MATH, GSM8K, HeadQA, and DeepScaler. We systematically compared baselines, Standard SFT, and RL-tuned models against their respective Oracle upper bounds to isolate the effects of the fine-tuning paradigm.
+          </p>
+          <p>
+            <strong>Finding: The Vanishing Generalization Gap.</strong>
+            Our analysis reveals a stark contrast between paradigms. While SFT models exhibit a large and expected OPG (indicating valid generalization challenges), this gap <strong>collapses to near-zero for RL-trained models</strong>. This suggests that for RL, the classical assumption that "unseen" test data is a sufficient measure of generalization no longer holds.
+          </p>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
-  </div>
-</div>
-</div>
+
+    <div class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            
+            <div class="item">
+              <img src="static/images/result_rl.png" alt="RL Performance Table" style="width:100%; object-fit: contain;"/>
+              <h2 class="subtitle has-text-centered">
+                <strong>Table 1: Benchmark Limitation.</strong> Comparison of RL models on training subsets vs. the Oracle model. The OPG (gap) is negligible, indicating RL agents effectively "memorize" the test distribution patterns.
+              </h2>
+            </div>
+
+            <div class="item">
+              <img src="static/images/result_sft.png" alt="SFT Performance Table" style="width:100%; object-fit: contain;"/>
+              <h2 class="subtitle has-text-centered">
+                <strong>Table 2: SFT Generalization.</strong> Unlike RL, SFT models show a significant gap between standard training and Oracle performance, confirming the benchmarks pose a valid challenge for Supervised Fine-Tuning.
+              </h2>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
 </section>
 <!-- End image carousel -->
 
