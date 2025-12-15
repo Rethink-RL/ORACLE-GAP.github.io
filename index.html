@@ -6,7 +6,7 @@
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
+  <meta name="title" content="Rethinking RL Evaluation: Can Benchmarks Truly Reveal Failures Of RL Methods?">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
   <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
@@ -186,7 +186,7 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
+  <!-- More Works Dropdown
   <div class="more-works-container">
     <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
       <i class="fas fa-flask"></i>
@@ -201,19 +201,14 @@
         </button>
       </div>
       <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
         <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
           <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
             <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
             <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
             <span class="work-venue">Conference/Journal 2024</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
         </a>
-        <!-- TODO: Add more related works or remove extra items -->
         <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
           <div class="work-info">
             <h5>Paper Title 2</h5>
@@ -232,7 +227,7 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <main id="main-content">
   <section class="hero">
@@ -459,8 +454,7 @@
     <div class="content has-text-justified">
       <p>
         <strong>The Paradox of Average Scores.</strong> A difficulty-agnostic evaluation masks substantial differences in generalization. Our analysis shows that models trained on easy data fail on hard tasks, yet their aggregated average scores remain deceptively similar to strong generalists. 
-        <strong>Therefore, benchmarks must report performance across difficulty levels separately.</strong>
-      </p>
+        Therefore, benchmarks must report performance across difficulty levels separately.
     </div>
 
     <div class="hero is-small">
@@ -493,7 +487,7 @@
     <div class="content has-text-justified">
       <p>
         <strong>Finding: Performance Inversion.</strong> Fine-tuning on a narrow distribution ($M_{core}$) leads to brittleness. As semantic distance increases ($d_1 \to d_5$), the specialist's advantage vanishes and eventually turns into a penalty compared to the baseline.
-        <strong>Benchmarks must include out-of-distribution (OOD) stress tests to penalize this brittleness.</strong>
+        Benchmarks must include out-of-distribution (OOD) stress tests to penalize this brittleness.
       </p>
     </div>
 
@@ -521,7 +515,7 @@
           <p>
             <strong>Finding:</strong> 
             Models consistently default to reciting memorized priors rather than reasoning from the new premises. Performance collapses on the Counterfactual Set ($\mathcal{D}_{cf}$) compared to the Balanced Set ($\mathcal{D}_{bal}$), as shown in the table.
-            <strong>Benchmarks require problems that create a direct conflict between priors and on-the-fly deduction.</strong>
+            Benchmarks require problems that create a direct conflict between priors and on-the-fly deduction.
           </p>
         </div>
       </div>
@@ -608,23 +602,25 @@
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="bibtex-header">
+      <h2 class="title">BibTeX</h2>
+      <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+        <i class="fas fa-copy"></i>
+        <span class="copy-text">Copy</span>
+      </button>
     </div>
+    <pre id="bibtex-code"><code>@misc{chen2025rethinkingrlevaluationbenchmarks,
+      title={Rethinking RL Evaluation: Can Benchmarks Truly Reveal Failures of RL Methods?}, 
+      author={Zihan Chen and Yiming Zhang and Hengguang Zhou and Zenghui Ding and Yining Sun and Cho-Jui Hsieh},
+      year={2025},
+      eprint={2510.10541},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2510.10541}, 
+}</code></pre>
+  </div>
 </section>
 <!--End BibTex citation -->
 
